@@ -76,7 +76,7 @@ describe('Performing tests at manager page', () => {
     })
   })
 
-  it.skip('[Issue #XXX opened] Check add customer with uncommon input data', () => {
+  it.skip('[Issue #1 opened] Check add customer with uncommon input data', () => {
     cy.findByRole('button', { name: /add customer/i }).click()
     cy.fillFormCustomer('%%¨$#@$%*(', '*', 'letters as zip code')
     cy.findAllByRole('button', { name: /add customer/i })
@@ -88,7 +88,7 @@ describe('Performing tests at manager page', () => {
     })
   })
 
-  it.skip('[Issue #XXX opened] Check add customer with short input data (1 character only)', () => {
+  it.skip('[Issue #1 opened] Check add customer with short input data (1 character only)', () => {
     cy.findByRole('button', { name: /add customer/i }).click()
     cy.fillFormCustomer('&', '$', '#')
     cy.findAllByRole('button', { name: /add customer/i })

@@ -58,6 +58,19 @@ describe('Performing tests at account page', () => {
     })
   })
 
+  it.only('Check withdrawal functionality', () => {
+    const withdrawalAmount = 100000
+    cy.findByRole('button', { name: /Withdrawl/i }).click()
+    cy.findByText('Amount to be Withdrawn :').should('be.visible')
+
+    cy.findByPlaceholderText('amount')
+      .should('be.visible')
+      .type(`${withdrawalAmount}{enter}`)
+    cy.findByText(/You can not withdraw amount more than the balance/i).should(
+      'be.visible'
+    )
+  })
+
   it('Check if transactions table is correctly shown', () => {
     cy.findByRole('button', { name: /Transactions/i }).click()
     cy.findByRole('table').should('be.visible')
