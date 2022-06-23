@@ -1,9 +1,49 @@
 {
   "customer": [
-    { "name": "Hermoine Granger", "fName": "Hermoine", "lName": "Granger" },
-    { "name": "Harry Potter", "fName": "Harry", "lName": "Potter" },
-    { "name": "Ron Weasly", "fName": "Ron", "lName": "Weasly" },
-    { "name": "Albus Dumbledore", "fName": "Albus", "lName": "Dumbledore" },
-    { "name": "Neville Longbottom", "fName": "Neville", "lName": "Longbottom" }
+    {
+      "name": "Hermoine Granger",
+      "fName": "Hermoine",
+      "lName": "Granger",
+      "postCd": "E859AB",
+      "id": 1,
+      "date": "2022-06-23T16:52:55.558Z",
+      "accountNo": [1001, 1002, 1003]
+    },
+    {
+      "name": "Harry Potter",
+      "fName": "Harry",
+      "lName": "Potter",
+      "postCd": "E725JB",
+      "id": 2,
+      "date": "2022-06-23T16:52:55.558Z",
+      "accountNo": [1004, 1005, 1006]
+    },
+    {
+      "name": "Ron Weasley",
+      "fName": "Ron",
+      "lName": "Weasly",
+      "postCd": "E55555",
+      "id": 3,
+      "date": "2022-06-23T16:52:55.558Z",
+      "accountNo": [1007, 1008, 1009]
+    },
+    {
+      "name": "Albus Dumbledore",
+      "fName": "Albus",
+      "lName": "Dumbledore",
+      "postCd": "E55656",
+      "id": 4,
+      "date": "2022-06-23T16:52:55.558Z",
+      "accountNo": [1010, 1011, 1012]
+    },
+    {
+      "name": "Neville Longbottom",
+      "fName": "Neville",
+      "lName": "Longbottom",
+      "postCd": "E89898",
+      "id": 5,
+      "date": "2022-06-23T16:52:55.558Z",
+      "accountNo": [1013, 1014, 1015]
+    }
   ]
 }

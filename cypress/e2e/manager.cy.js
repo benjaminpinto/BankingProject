@@ -115,4 +115,32 @@ describe('Performing tests at manager page', () => {
       .type(customer[0].fName)
     cy.findByText(customer[0].fName).should('not.exist')
   })
+
+  it('Check open account without select a customer and/or a currency', () => {
+    cy.findByRole('button', { name: /Open account/i }).click()
+    cy.findByRole('button', { name: /Process/i }).click()
+    cy.get('#userSelect')
+      .invoke('prop', 'validity')
+      .should('deep.include', { valid: false })
+    cy.get('#currency')
+      .invoke('prop', 'validity')
+      .should('deep.include', { valid: false })
+  })
+
+  it('Check open account correctly selecting customer and currency', () => {
+    const curr = 'Dollar'
+    cy.findByRole('button', { name: /Open Account/i }).click()
+    cy.get('#userSelect').select(customer[0].name)
+    cy.get('#currency').select(curr)
+    cy.findByRole('button', { name: /Process/i }).click()
+    cy.on('window:alert', (text) => {
+      expect(text).to.contains('Account created successfully')
+    })
+    cy.getLocalStorage('Account').then((data) => {
+      const account = JSON.parse(data)
+      const last = Object.keys(account).pop()
+      expect(parseInt(account[last].userId)).to.eq(customer[0].id)
+      expect(account[last].currency).to.equal(curr)
+    })
+  })
 })

@@ -58,7 +58,7 @@ describe('Performing tests at account page', () => {
     })
   })
 
-  it.only('Check withdrawal functionality', () => {
+  it('Check withdrawal functionality', () => {
     const withdrawalAmount = 100000
     cy.findByRole('button', { name: /Withdrawl/i }).click()
     cy.findByText('Amount to be Withdrawn :').should('be.visible')
