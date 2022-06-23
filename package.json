@@ -1,0 +1,23 @@
+{
+  "name": "bankingproject",
+  "version": "1.0.0",
+  "description": "Applaudo code challange resolution. By Benjamin Pinto.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "open": "npx cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "bankingproject"
+  ],
+  "author": "Benjamin Pinto",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "cypress": "^10.2.0",
+    "cypress-testing-library": "^4.0.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-cypress": "^2.12.1"
+  }
+}
