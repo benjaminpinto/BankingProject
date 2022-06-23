@@ -1,9 +1,9 @@
 {
   "customer": [
-    { "name": "Hermoine Granger" },
-    { "name": "Harry Potter" },
-    { "name": "Ron Weasly" },
-    { "name": "Albus Dumbledore" },
-    { "name": "Neville Longbottom" }
+    { "name": "Hermoine Granger", "fName": "Hermoine", "lName": "Granger" },
+    { "name": "Harry Potter", "fName": "Harry", "lName": "Potter" },
+    { "name": "Ron Weasly", "fName": "Ron", "lName": "Weasly" },
+    { "name": "Albus Dumbledore", "fName": "Albus", "lName": "Dumbledore" },
+    { "name": "Neville Longbottom", "fName": "Neville", "lName": "Longbottom" }
   ]
 }
