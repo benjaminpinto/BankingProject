@@ -1,0 +1,9 @@
+{
+  "customer": [
+    { "name": "Hermoine Granger" },
+    { "name": "Harry Potter" },
+    { "name": "Ron Weasly" },
+    { "name": "Albus Dumbledore" },
+    { "name": "Neville Longbottom" }
+  ]
+}
