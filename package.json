@@ -4,7 +4,7 @@
   "description": "Applaudo code challange resolution. By Benjamin Pinto.",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "npx cypress run",
     "open": "npx cypress open"
   },
   "keywords": [

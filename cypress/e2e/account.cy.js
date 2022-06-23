@@ -27,28 +27,51 @@ describe('Performing tests at account page', () => {
   })
 
   it('Check deposit functionality', () => {
+    const depositAmount = 100
     cy.findByRole('button', { name: /Deposit/i }).click()
     cy.findByText('Amount to be Deposited :').should('be.visible')
 
     // Get actual amount from local storage
     cy.getLocalStorage('CurrentAccount').then((data) => {
       const account = JSON.parse(data)
-      cy.findByPlaceholderText('amount').should('be.visible').type('100{enter}')
+      cy.findByPlaceholderText('amount')
+        .should('be.visible')
+        .type(`${depositAmount}{enter}`)
       cy.findByText('Deposit Successful').should('be.visible')
-      cy.findByText(account.amount + 100).should('be.visible')
+      cy.findByText(account.amount + depositAmount).should('be.visible')
     })
   })
 
-  it.only('Check withdrawal functionality', () => {
+  it('Check withdrawal functionality', () => {
+    const withdrawalAmount = 100
     cy.findByRole('button', { name: /Withdrawl/i }).click()
     cy.findByText('Amount to be Withdrawn :').should('be.visible')
 
     // Get actual amount from local storage
     cy.getLocalStorage('CurrentAccount').then((data) => {
       const account = JSON.parse(data)
-      cy.findByPlaceholderText('amount').should('be.visible').type('100{enter}')
+      cy.findByPlaceholderText('amount')
+        .should('be.visible')
+        .type(`${withdrawalAmount}{enter}`)
       cy.findByText('Transaction successful').should('be.visible')
-      cy.findByText(account.amount - 100).should('be.visible')
+      cy.findByText(account.amount - withdrawalAmount).should('be.visible')
     })
+  })
+
+  it('Check if transactions table is correctly shown', () => {
+    cy.findByRole('button', { name: /Transactions/i }).click()
+    cy.findByRole('table').should('be.visible')
+  })
+
+  it('Check "Reset" transactions functionality', () => {
+    cy.findByRole('button', { name: /Transactions/i }).click()
+    cy.findByRole('button', { name: /Reset/i }).click()
+    cy.findByRole('table').get('tbody').children().should('have.length', 0)
+  })
+
+  it('Check back button at transactions page', () => {
+    cy.findByRole('button', { name: /Transactions/i }).click()
+    cy.findByRole('button', { name: /Back/i }).click()
+    cy.findByText(customer[0].name).should('be.visible')
   })
 })

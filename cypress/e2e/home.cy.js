@@ -3,7 +3,7 @@ describe('Performing tests at homepage', () => {
     cy.visit('/')
   })
 
-  it('Check main elements of homepage', () => {
+  it('Check main elements visibility', () => {
     cy.get('.mainHeading').should('be.visible')
     cy.findByRole('button', { name: /Home/i }).should('be.visible')
     cy.findByRole('button', { name: /Customer login/i }).should('be.visible')
