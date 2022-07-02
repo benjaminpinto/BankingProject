@@ -1,6 +1,6 @@
 # XYZ Bank Code Challenge
 
-![Cypress Tests](https://github.com/benjaminpinto/BankingProject/actions/workflows/main.yml/badge.svg)
+![Cypress Tests](https://github.com/benjaminpinto/BankingProject/actions/workflows/cypressAction.yml/badge.svg) ![Security OWASP](https://github.com/benjaminpinto/BankingProject/actions/workflows/owaspAction.yml/badge.svg)
 
 This project is a result of a code challenge that demands the use of Cypress to automate tests upon [XYZ Bank application](https://www.globalsqa.com/angularJs-protractor/BankingProject).
 
