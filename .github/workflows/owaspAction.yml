@@ -2,8 +2,8 @@ name: OWASP ZAP Test
 
 on:
   push:
-    # monitora a branch main
-    branches: [main]
+    # monitora a branch master
+    branches: [master]
 
   # permite executar manualmente
   workflow_dispatch:
