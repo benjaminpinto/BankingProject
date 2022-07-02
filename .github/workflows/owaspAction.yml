@@ -1,9 +1,9 @@
 name: OWASP ZAP Test
 
 on:
-  push:
-    # monitora a branch master
-    branches: [master]
+  # push:
+  #   # monitora a branch master
+  #   branches: [master]
 
   # permite executar manualmente
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
         run: echo 'Starting application'
 
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.4.0
+        uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://www.globalsqa.com/angularJs-protractor/BankingProject'
           fail_action: true
