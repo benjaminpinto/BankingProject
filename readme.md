@@ -33,7 +33,7 @@ Or, run `npm run open` to open Cypress in interactive mode.
 
 ## Security Tests
 
-In this project, I'm using OWASP ZAP to perform security verifications. a [Github Action](/.github/workflows/owaspAction.yml) was created to trigger it, but the execution isn't (by choice) automated with the commit.
+In this project, I'm using OWASP ZAP to perform security verifications. a [Github Action](/.github/workflows/owaspAction.yml) was created to trigger it and, like it happens with Cypress Tests, Security tests are calld at every commit on master branch.
 
 The results of the last security test run is available [here](https://benjaminpinto.github.io/BankingProject/).
 
