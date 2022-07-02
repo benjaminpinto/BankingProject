@@ -1,0 +1,38 @@
+name: OWASP ZAP Test
+
+on:
+  push:
+    # monitora a branch main
+    branches: [main]
+
+  # permite executar manualmente
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run Application
+        run: echo 'Starting application'
+
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.4.0
+        with:
+          target: 'https://www.globalsqa.com/angularJs-protractor/BankingProject'
+          fail_action: true
+
+      - name: Move files
+        run: |
+          mkdir ./public
+          mv ./report_html.html ./public/index.html
+        if: always()
+
+      - name: Publish Report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
